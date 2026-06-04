@@ -1,210 +1,157 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "alva_hero": {
+      "type": "alva-hero",
+      "settings": {
+        "eyebrow": "Portuguese Soft Tailoring",
+        "heading": "The unstructured blazer.",
+        "subhead": "Made in our own factory, in seven fabrics. From €490.",
+        "cta_label": "See the blazer",
+        "cta_link": "/products/the-unstructured-blazer"
+      }
+    },
+    "alva_pillars": {
+      "type": "alva-three-pillars",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "pillar_1": {
+          "type": "pillar",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "heading": "Versatile by design.",
+            "body": "One construction, seven fabrics. The same blazer worn to a board meeting or a Saturday lunch — what changes is the cloth."
           }
         },
-        "text": {
-          "type": "text",
+        "pillar_2": {
+          "type": "pillar",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "heading": "Made in our factory.",
+            "body": "Our factory in Central Portugal has been making outerwear since 1981. 30,000 garments a year, for European brands you’d recognise in the best stores on the continent."
           }
         },
-        "button": {
-          "type": "buttons",
+        "pillar_3": {
+          "type": "pillar",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "heading": "Honest from the start.",
+            "body": "No shoulder padding, no canvas, no lining. Exposed seams bound by hand. The cloth from VBC, Reda, Drago, and Dormeuil — mills that have been weaving since the seventeenth century."
           }
         }
       },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
+      "block_order": ["pillar_1", "pillar_2", "pillar_3"]
+    },
+    "alva_showcase": {
+      "type": "alva-product-showcase",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "eyebrow": "The Blazer",
+        "heading": "One construction.\nSeven fabrics.",
+        "body": "No shoulder padding. No canvas. No lining. In VBC, Reda, Drago, or Dormeuil wool. From €490.",
+        "cta_label": "See the collection",
+        "cta_link": "/products/the-unstructured-blazer"
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "alva_fabrics": {
+      "type": "alva-fabric-grid",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "fabric_1": {
+          "type": "fabric",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "name": "Navy honeycomb wool",
+            "mill": "VBC · 1663",
+            "price": "€490"
           }
         },
-        "text": {
-          "type": "text",
+        "fabric_2": {
+          "type": "fabric",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "name": "Chocolate wool blend",
+            "mill": "Reda · 1865",
+            "price": "€490"
+          }
+        },
+        "fabric_3": {
+          "type": "fabric",
+          "settings": {
+            "name": "Navy denim",
+            "mill": "Drago · 1875",
+            "price": "€490"
+          }
+        },
+        "fabric_4": {
+          "type": "fabric",
+          "settings": {
+            "name": "Navy melange",
+            "mill": "VBC · 1663",
+            "price": "€490"
+          }
+        },
+        "fabric_5": {
+          "type": "fabric",
+          "settings": {
+            "name": "Pied-de-poule navy & black",
+            "mill": "Dormeuil · 1842",
+            "price": "€590"
+          }
+        },
+        "fabric_6": {
+          "type": "fabric",
+          "settings": {
+            "name": "Beige wool",
+            "mill": "Reda · 1865",
+            "price": "€490"
+          }
+        },
+        "fabric_7": {
+          "type": "fabric",
+          "settings": {
+            "name": "Indigo wool blend",
+            "mill": "Drago · 1875",
+            "price": "€690"
           }
         }
       },
-      "block_order": [
-        "heading",
-        "text"
-      ],
+      "block_order": ["fabric_1", "fabric_2", "fabric_3", "fabric_4", "fabric_5", "fabric_6", "fabric_7"],
       "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "eyebrow": "The Cloth",
+        "heading": "Four mills. 724 years of weaving.",
+        "subhead": "Used by the houses charging twice the price.",
+        "cta_label": "Read about the fabrics",
+        "cta_link": "/pages/blazer-fabrics"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "alva_factory": {
+      "type": "alva-factory",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
+        "eyebrow": "The Factory",
+        "heading": "44 years making what other brands outsource.",
+        "body": "Our factory in Central Portugal has been making outerwear since 1981. 30,000 garments per year, for European brands you’d recognise in the best stores on the continent. In 2026, we put our own name on the label for the first time.",
+        "cta_label": "Inside the factory",
+        "cta_link": "/pages/factory"
       }
     },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
+    "alva_consultation": {
+      "type": "alva-consultation-cta",
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "eyebrow": "For when you have questions",
+        "heading": "A free 30-minute consultation.",
+        "body": "Talk to one of our advisors about fabric, fit, or anything you want to know before you order. No commitment, no upsell — just the conversation that gets the blazer right.",
+        "cta_label": "Book a consultation",
+        "cta_link": "/pages/consultation"
       }
     },
-    "video": {
-      "type": "video",
+    "alva_journal": {
+      "type": "alva-journal-preview",
       "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "What we’ve been writing.",
+        "cta_label": "All articles",
+        "cta_link": "/blogs/journal"
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "alva_hero",
+    "alva_pillars",
+    "alva_showcase",
+    "alva_fabrics",
+    "alva_factory",
+    "alva_consultation",
+    "alva_journal"
   ]
 }

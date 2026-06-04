@@ -1,0 +1,112 @@
+<style>
+  .alva-consultation {
+    background-color: var(--cream);
+    padding: var(--sp-20) var(--container-pad);
+  }
+
+  .alva-consultation__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .alva-consultation__eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--font-eyebrow);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: var(--sp-10);
+    display: block;
+  }
+
+  .alva-consultation__heading {
+    font-family: var(--font-heading);
+    font-size: var(--font-display-md);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: var(--sp-6);
+  }
+
+  .alva-consultation__body {
+    font-family: var(--font-body);
+    font-size: var(--font-body-lg);
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--charcoal);
+    max-width: 600px;
+    margin-bottom: var(--sp-12);
+  }
+</style>
+
+<section class="alva-consultation">
+  <div class="alva-consultation__inner">
+    <span class="alva-consultation__eyebrow">{{ section.settings.eyebrow | default: 'For when you have questions' }}</span>
+
+    {%- if section.settings.heading != blank -%}
+      <h2 class="alva-consultation__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.body != blank -%}
+      <p class="alva-consultation__body">{{ section.settings.body }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
+      <a href="{{ section.settings.cta_link }}" class="alva-btn alva-btn--secondary">
+        {{ section.settings.cta_label }}
+        <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Consultation CTA",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "For when you have questions"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A free 30-minute consultation."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body text",
+      "default": "Talk to one of our advisors about fabric, fit, or anything you want to know before you order. No commitment, no upsell — just the conversation that gets the blazer right."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label",
+      "default": "Book a consultation"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Consultation CTA"
+    }
+  ]
+}
+{% endschema %}

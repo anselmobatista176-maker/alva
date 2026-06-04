@@ -1,0 +1,182 @@
+<style>
+  .alva-factory {
+    background-color: var(--ink);
+    padding: var(--sp-20) var(--container-pad);
+  }
+
+  @media (min-width: 1024px) {
+    .alva-factory {
+      padding: var(--sp-40) var(--container-pad);
+    }
+  }
+
+  .alva-factory__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-10);
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .alva-factory__inner {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-20);
+    }
+  }
+
+  .alva-factory__image-col {
+    overflow: hidden;
+  }
+
+  .alva-factory__image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (min-width: 1024px) {
+    .alva-factory__image {
+      aspect-ratio: 4 / 5;
+    }
+  }
+
+  .alva-factory__text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .alva-factory__eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--font-eyebrow);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 244, 0.6);
+    margin-bottom: var(--sp-8);
+    display: block;
+  }
+
+  .alva-factory__heading {
+    font-family: var(--font-heading);
+    font-size: var(--font-display-lg);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+    color: var(--paper);
+    margin-bottom: var(--sp-8);
+  }
+
+  .alva-factory__body {
+    font-family: var(--font-body);
+    font-size: var(--font-body-md);
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(250, 248, 244, 0.8);
+    max-width: 480px;
+    margin-bottom: var(--sp-12);
+  }
+</style>
+
+<section class="alva-factory">
+  <div class="alva-factory__inner">
+
+    <!-- Image -->
+    <div class="alva-factory__image-col">
+      {%- if section.settings.image != blank -%}
+        <img
+          class="alva-factory__image"
+          src="{{ section.settings.image | image_url: width: 1200 }}"
+          srcset="
+            {{ section.settings.image | image_url: width: 480 }} 480w,
+            {{ section.settings.image | image_url: width: 768 }} 768w,
+            {{ section.settings.image | image_url: width: 1200 }} 1200w
+          "
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          alt="{{ section.settings.image.alt | escape | default: 'The factory' }}"
+          loading="lazy"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+        >
+      {%- else -%}
+        <div class="alva-factory__image" style="background-color: var(--charcoal);"></div>
+      {%- endif -%}
+    </div>
+
+    <!-- Text -->
+    <div class="alva-factory__text-col">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="alva-factory__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="alva-factory__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.body != blank -%}
+        <p class="alva-factory__body">{{ section.settings.body }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
+        <a href="{{ section.settings.cta_link }}" class="alva-btn alva-btn--inverted">
+          {{ section.settings.cta_label }}
+          <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Factory section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Factory image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Factory"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "44 years making what other brands outsource."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body text",
+      "default": "Our factory in Central Portugal has been making outerwear since 1981. 30,000 garments per year, for European brands you'd recognise in the best stores on the continent. In 2026, we put our own name on the label for the first time."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label",
+      "default": "Inside the factory"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Factory section"
+    }
+  ]
+}
+{% endschema %}

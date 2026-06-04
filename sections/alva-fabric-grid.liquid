@@ -1,0 +1,309 @@
+<style>
+  .alva-fabrics {
+    background-color: var(--cream);
+    padding: var(--sp-20) var(--container-pad);
+  }
+
+  @media (min-width: 1024px) {
+    .alva-fabrics {
+      padding: var(--sp-40) var(--container-pad);
+    }
+  }
+
+  .alva-fabrics__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .alva-fabrics__header {
+    text-align: center;
+    margin-bottom: var(--sp-16);
+  }
+
+  .alva-fabrics__eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--font-eyebrow);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: var(--sp-12);
+    display: block;
+  }
+
+  .alva-fabrics__heading {
+    font-family: var(--font-heading);
+    font-size: var(--font-display-lg);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin-bottom: var(--sp-6);
+  }
+
+  .alva-fabrics__subhead {
+    font-family: var(--font-body);
+    font-size: var(--font-body-lg);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--stone);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  /* Fabric grid — mobile: single column */
+  .alva-fabrics__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+    margin-bottom: var(--sp-16);
+  }
+
+  @media (min-width: 768px) {
+    .alva-fabrics__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .alva-fabrics__grid {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto auto auto;
+    }
+
+    /* Row 1 */
+    .alva-fabrics__item:nth-child(1) { grid-column: span 5; }
+    .alva-fabrics__item:nth-child(2) { grid-column: span 4; }
+    .alva-fabrics__item:nth-child(3) { grid-column: span 3; }
+
+    /* Row 2 */
+    .alva-fabrics__item:nth-child(4) { grid-column: span 3; }
+    .alva-fabrics__item:nth-child(5) { grid-column: span 5; }
+    .alva-fabrics__item:nth-child(6) { grid-column: span 4; }
+
+    /* Row 3 — full width */
+    .alva-fabrics__item:nth-child(7) {
+      grid-column: span 12;
+    }
+
+    .alva-fabrics__item:nth-child(7) .alva-fabrics__item-image {
+      aspect-ratio: 16 / 5;
+    }
+  }
+
+  .alva-fabrics__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .alva-fabrics__item-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+  }
+
+  .alva-fabrics__item-info {
+    padding: var(--sp-3) 0 var(--sp-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-1);
+  }
+
+  .alva-fabrics__item-name {
+    font-family: var(--font-heading);
+    font-size: var(--font-display-sm);
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .alva-fabrics__item-mill {
+    font-family: var(--font-body);
+    font-size: var(--font-ui-sm);
+    font-weight: 400;
+    color: var(--stone);
+    line-height: 1.4;
+  }
+
+  .alva-fabrics__item-price {
+    font-family: var(--font-body);
+    font-size: var(--font-body-md);
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.4;
+  }
+
+  .alva-fabrics__cta {
+    text-align: center;
+  }
+
+  .alva-fabrics__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-family: var(--font-body);
+    font-size: var(--font-body-md);
+    font-weight: 400;
+    color: var(--charcoal);
+    text-decoration: underline;
+    text-decoration-color: var(--sand);
+    text-underline-offset: 4px;
+    transition: color 150ms ease-out, text-decoration-color 150ms ease-out;
+  }
+
+  .alva-fabrics__link:hover {
+    color: var(--warm);
+    text-decoration-color: var(--warm);
+    text-decoration: underline;
+  }
+
+  .alva-fabrics__link svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+</style>
+
+<section class="alva-fabrics">
+  <div class="alva-fabrics__inner">
+
+    <div class="alva-fabrics__header">
+      <span class="alva-fabrics__eyebrow">{{ section.settings.eyebrow | default: 'The Cloth' }}</span>
+      <h2 class="alva-fabrics__heading">{{ section.settings.heading | default: 'Four mills. 724 years of weaving.' }}</h2>
+      {%- if section.settings.subhead != blank -%}
+        <p class="alva-fabrics__subhead">{{ section.settings.subhead }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="alva-fabrics__grid">
+      {%- for block in section.blocks -%}
+        <div class="alva-fabrics__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <img
+              class="alva-fabrics__item-image"
+              src="{{ block.settings.image | image_url: width: 800 }}"
+              srcset="
+                {{ block.settings.image | image_url: width: 480 }} 480w,
+                {{ block.settings.image | image_url: width: 800 }} 800w,
+                {{ block.settings.image | image_url: width: 1200 }} 1200w
+              "
+              sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
+              alt="{{ block.settings.name | escape }}"
+              loading="lazy"
+            >
+          {%- else -%}
+            <div class="alva-fabrics__item-image" style="background-color: var(--sand);"></div>
+          {%- endif -%}
+
+          <div class="alva-fabrics__item-info">
+            <span class="alva-fabrics__item-name">{{ block.settings.name }}</span>
+            <span class="alva-fabrics__item-mill">{{ block.settings.mill }}</span>
+            <span class="alva-fabrics__item-price">{{ block.settings.price }}</span>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
+      <div class="alva-fabrics__cta">
+        <a href="{{ section.settings.cta_link }}" class="alva-fabrics__link">
+          {{ section.settings.cta_label }}
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fabric grid",
+  "max_blocks": 7,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Cloth"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Four mills. 724 years of weaving."
+    },
+    {
+      "type": "text",
+      "id": "subhead",
+      "label": "Subheading",
+      "default": "Used by the houses charging twice the price."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Link label",
+      "default": "Read about the fabrics"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Link URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "fabric",
+      "name": "Fabric",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Fabric image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Fabric name",
+          "default": "Navy honeycomb wool"
+        },
+        {
+          "type": "text",
+          "id": "mill",
+          "label": "Mill + year",
+          "default": "VBC · 1663"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "€490"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fabric grid",
+      "blocks": [
+        { "type": "fabric", "settings": { "name": "Navy honeycomb wool", "mill": "VBC · 1663", "price": "€490" } },
+        { "type": "fabric", "settings": { "name": "Chocolate wool blend", "mill": "Reda · 1865", "price": "€490" } },
+        { "type": "fabric", "settings": { "name": "Navy denim", "mill": "Drago · 1875", "price": "€490" } },
+        { "type": "fabric", "settings": { "name": "Navy melange", "mill": "VBC · 1663", "price": "€490" } },
+        { "type": "fabric", "settings": { "name": "Pied-de-poule navy & black", "mill": "Dormeuil · 1842", "price": "€590" } },
+        { "type": "fabric", "settings": { "name": "Beige wool", "mill": "Reda · 1865", "price": "€490" } },
+        { "type": "fabric", "settings": { "name": "Indigo wool blend", "mill": "Drago · 1875", "price": "€690" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

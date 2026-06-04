@@ -1,0 +1,169 @@
+<style>
+  .alva-showcase {
+    background-color: var(--paper);
+    padding: var(--sp-20) var(--container-pad);
+  }
+
+  .alva-showcase__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-10);
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .alva-showcase__inner {
+      grid-template-columns: 60fr 40fr;
+      gap: var(--sp-20);
+    }
+  }
+
+  .alva-showcase__image-col {
+    overflow: hidden;
+  }
+
+  .alva-showcase__image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+  }
+
+  .alva-showcase__text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .alva-showcase__eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--font-eyebrow);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: var(--sp-8);
+    display: block;
+  }
+
+  .alva-showcase__heading {
+    font-family: var(--font-heading);
+    font-size: var(--font-display-md);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: var(--sp-8);
+  }
+
+  .alva-showcase__body {
+    font-family: var(--font-body);
+    font-size: var(--font-body-lg);
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--charcoal);
+    max-width: 480px;
+    margin-bottom: var(--sp-12);
+  }
+</style>
+
+<section class="alva-showcase">
+  <div class="alva-showcase__inner">
+
+    <!-- Image column (left on desktop, top on mobile) -->
+    <div class="alva-showcase__image-col">
+      {%- if section.settings.image != blank -%}
+        <img
+          class="alva-showcase__image"
+          src="{{ section.settings.image | image_url: width: 1200 }}"
+          srcset="
+            {{ section.settings.image | image_url: width: 480 }} 480w,
+            {{ section.settings.image | image_url: width: 768 }} 768w,
+            {{ section.settings.image | image_url: width: 1200 }} 1200w
+          "
+          sizes="(min-width: 1024px) 60vw, 100vw"
+          alt="{{ section.settings.image.alt | escape | default: section.settings.heading }}"
+          loading="lazy"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+        >
+      {%- else -%}
+        <div class="alva-showcase__image" style="background-color: var(--cream);"></div>
+      {%- endif -%}
+    </div>
+
+    <!-- Text column -->
+    <div class="alva-showcase__text-col">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="alva-showcase__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="alva-showcase__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.body != blank -%}
+        <p class="alva-showcase__body">{{ section.settings.body }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
+        <a href="{{ section.settings.cta_link }}" class="alva-btn alva-btn--primary">
+          {{ section.settings.cta_label }}
+          <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product showcase",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "The Blazer"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "One construction.\nSeven fabrics."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body text",
+      "default": "No shoulder padding. No canvas. No lining. In VBC, Reda, Drago, or Dormeuil wool. From €490."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label",
+      "default": "See the collection"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product showcase"
+    }
+  ]
+}
+{% endschema %}
