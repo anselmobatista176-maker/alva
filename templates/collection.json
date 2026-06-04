@@ -14,7 +14,80 @@
       "settings": {
         "products_per_page": 24
       }
+    },
+    "featured_product_jgWmLT": {
+      "type": "featured-product",
+      "blocks": {
+        "text_JiXeiU": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_f96e8Y": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_9HR8Ea": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_zjVWVc": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_K4myYp": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_pnK8BN": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_WNEWdr": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_JiXeiU",
+        "title_f96e8Y",
+        "price_9HR8Ea",
+        "variant_picker_zjVWVc",
+        "quantity_selector_K4myYp",
+        "buy_buttons_pnK8BN",
+        "share_WNEWdr"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "the-unstructured-blazer",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
-  "order": ["collection"]
+  "order": [
+    "collection",
+    "featured_product_jgWmLT"
+  ]
 }
