@@ -1,8 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "alva_hero": {
       "type": "alva-hero",
       "settings": {
+        "image": "shopify://shop_images/Generated_with_Kive.ai_-_kive-image.png",
         "eyebrow": "Portuguese Soft Tailoring",
         "heading": "The unstructured blazer.",
         "subhead": "Made in our own factory, in seven fabrics. From €490.",
@@ -35,13 +45,19 @@
           }
         }
       },
-      "block_order": ["pillar_1", "pillar_2", "pillar_3"]
+      "block_order": [
+        "pillar_1",
+        "pillar_2",
+        "pillar_3"
+      ],
+      "settings": {}
     },
     "alva_showcase": {
       "type": "alva-product-showcase",
       "settings": {
+        "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
         "eyebrow": "The Blazer",
-        "heading": "One construction.\nSeven fabrics.",
+        "heading": "One construction.Seven fabrics.",
         "body": "No shoulder padding. No canvas. No lining. In VBC, Reda, Drago, or Dormeuil wool. From €490.",
         "cta_label": "See the collection",
         "cta_link": "/products/the-unstructured-blazer"
@@ -53,6 +69,7 @@
         "fabric_1": {
           "type": "fabric",
           "settings": {
+            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
             "name": "Navy honeycomb wool",
             "mill": "VBC · 1663",
             "price": "€490"
@@ -61,6 +78,7 @@
         "fabric_2": {
           "type": "fabric",
           "settings": {
+            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
             "name": "Chocolate wool blend",
             "mill": "Reda · 1865",
             "price": "€490"
@@ -69,6 +87,7 @@
         "fabric_3": {
           "type": "fabric",
           "settings": {
+            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
             "name": "Navy denim",
             "mill": "Drago · 1875",
             "price": "€490"
@@ -77,6 +96,7 @@
         "fabric_4": {
           "type": "fabric",
           "settings": {
+            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
             "name": "Navy melange",
             "mill": "VBC · 1663",
             "price": "€490"
@@ -85,6 +105,7 @@
         "fabric_5": {
           "type": "fabric",
           "settings": {
+            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
             "name": "Pied-de-poule navy & black",
             "mill": "Dormeuil · 1842",
             "price": "€590"
@@ -93,6 +114,7 @@
         "fabric_6": {
           "type": "fabric",
           "settings": {
+            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
             "name": "Beige wool",
             "mill": "Reda · 1865",
             "price": "€490"
@@ -101,13 +123,22 @@
         "fabric_7": {
           "type": "fabric",
           "settings": {
+            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
             "name": "Indigo wool blend",
             "mill": "Drago · 1875",
             "price": "€690"
           }
         }
       },
-      "block_order": ["fabric_1", "fabric_2", "fabric_3", "fabric_4", "fabric_5", "fabric_6", "fabric_7"],
+      "block_order": [
+        "fabric_1",
+        "fabric_2",
+        "fabric_3",
+        "fabric_4",
+        "fabric_5",
+        "fabric_6",
+        "fabric_7"
+      ],
       "settings": {
         "eyebrow": "The Cloth",
         "heading": "Four mills. 724 years of weaving.",
@@ -119,6 +150,7 @@
     "alva_factory": {
       "type": "alva-factory",
       "settings": {
+        "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
         "eyebrow": "The Factory",
         "heading": "44 years making what other brands outsource.",
         "body": "Our factory in Central Portugal has been making outerwear since 1981. 30,000 garments per year, for European brands you’d recognise in the best stores on the continent. In 2026, we put our own name on the label for the first time.",
@@ -139,6 +171,7 @@
     "alva_journal": {
       "type": "alva-journal-preview",
       "settings": {
+        "blog": "",
         "heading": "What we’ve been writing.",
         "cta_label": "All articles",
         "cta_link": "/blogs/journal"
