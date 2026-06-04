@@ -12,7 +12,7 @@
     "alva_hero": {
       "type": "alva-hero",
       "settings": {
-        "image": "shopify://shop_images/Generated_with_Kive.ai_-_kive-image.png",
+        "image": "shopify://shop_images/alva-hero.png",
         "eyebrow": "Portuguese Soft Tailoring",
         "heading": "The unstructured blazer.",
         "subhead": "Made in our own factory, in seven fabrics. From €490.",
@@ -34,7 +34,7 @@
           "type": "pillar",
           "settings": {
             "heading": "Made in our factory.",
-            "body": "Our factory in Central Portugal has been making outerwear since 1981. 30,000 garments a year, for European brands you’d recognise in the best stores on the continent."
+            "body": "Our factory in Central Portugal has been making outerwear since 1981. 30,000 garments a year, for European brands you'd recognise in the best stores on the continent."
           }
         },
         "pillar_3": {
@@ -55,9 +55,9 @@
     "alva_showcase": {
       "type": "alva-product-showcase",
       "settings": {
-        "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
+        "image": "shopify://shop_images/alva-product-showcase.png",
         "eyebrow": "The Blazer",
-        "heading": "One construction.Seven fabrics.",
+        "heading": "One construction.\nSeven fabrics.",
         "body": "No shoulder padding. No canvas. No lining. In VBC, Reda, Drago, or Dormeuil wool. From €490.",
         "cta_label": "See the collection",
         "cta_link": "/products/the-unstructured-blazer"
@@ -69,7 +69,7 @@
         "fabric_1": {
           "type": "fabric",
           "settings": {
-            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
+            "image": "shopify://shop_images/alva-fabric-navy-honeycomb.png",
             "name": "Navy honeycomb wool",
             "mill": "VBC · 1663",
             "price": "€490"
@@ -78,7 +78,7 @@
         "fabric_2": {
           "type": "fabric",
           "settings": {
-            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
+            "image": "shopify://shop_images/alva-fabric-chocolate.png",
             "name": "Chocolate wool blend",
             "mill": "Reda · 1865",
             "price": "€490"
@@ -87,7 +87,7 @@
         "fabric_3": {
           "type": "fabric",
           "settings": {
-            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
+            "image": "shopify://shop_images/alva-fabric-navy-denim.png",
             "name": "Navy denim",
             "mill": "Drago · 1875",
             "price": "€490"
@@ -96,7 +96,7 @@
         "fabric_4": {
           "type": "fabric",
           "settings": {
-            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
+            "image": "shopify://shop_images/alva-fabric-navy-melange.png",
             "name": "Navy melange",
             "mill": "VBC · 1663",
             "price": "€490"
@@ -105,7 +105,7 @@
         "fabric_5": {
           "type": "fabric",
           "settings": {
-            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
+            "image": "shopify://shop_images/alva-fabric-pied-de-poule.png",
             "name": "Pied-de-poule navy & black",
             "mill": "Dormeuil · 1842",
             "price": "€590"
@@ -114,7 +114,7 @@
         "fabric_6": {
           "type": "fabric",
           "settings": {
-            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
+            "image": "shopify://shop_images/alva-fabric-beige.png",
             "name": "Beige wool",
             "mill": "Reda · 1865",
             "price": "€490"
@@ -123,7 +123,7 @@
         "fabric_7": {
           "type": "fabric",
           "settings": {
-            "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
+            "image": "shopify://shop_images/alva-fabric-indigo.png",
             "name": "Indigo wool blend",
             "mill": "Drago · 1875",
             "price": "€690"
@@ -150,10 +150,10 @@
     "alva_factory": {
       "type": "alva-factory",
       "settings": {
-        "image": "shopify://shop_images/GeneratedwithKive.ai-kive-image_1.png",
+        "image": "shopify://shop_images/alva-factory.png",
         "eyebrow": "The Factory",
         "heading": "44 years making what other brands outsource.",
-        "body": "Our factory in Central Portugal has been making outerwear since 1981. 30,000 garments per year, for European brands you’d recognise in the best stores on the continent. In 2026, we put our own name on the label for the first time.",
+        "body": "Our factory in Central Portugal has been making outerwear since 1981. 30,000 garments per year, for European brands you'd recognise in the best stores on the continent. In 2026, we put our own name on the label for the first time.",
         "cta_label": "Inside the factory",
         "cta_link": "/pages/factory"
       }
@@ -170,9 +170,38 @@
     },
     "alva_journal": {
       "type": "alva-journal-preview",
+      "blocks": {
+        "journal_1": {
+          "type": "article_card",
+          "settings": {
+            "image": "shopify://shop_images/alva-journal-fabrics.png",
+            "category": "Fabrics",
+            "title": "On the cloth we chose and why.",
+            "date": "June 2026"
+          }
+        },
+        "journal_2": {
+          "type": "article_card",
+          "settings": {
+            "image": "shopify://shop_images/alva-journal-construction.png",
+            "category": "Construction",
+            "title": "Hand-bound seams: why we don't use a machine.",
+            "date": "June 2026"
+          }
+        },
+        "journal_3": {
+          "type": "article_card",
+          "settings": {
+            "image": "shopify://shop_images/alva-journal-lifestyle.png",
+            "category": "The Blazer",
+            "title": "Wearing it in Portugal: a week in the blazer.",
+            "date": "June 2026"
+          }
+        }
+      },
+      "block_order": ["journal_1", "journal_2", "journal_3"],
       "settings": {
-        "blog": "",
-        "heading": "What we’ve been writing.",
+        "heading": "What we've been writing.",
         "cta_label": "All articles",
         "cta_link": "/blogs/journal"
       }
