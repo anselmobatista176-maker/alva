@@ -1,0 +1,365 @@
+<style>
+  /* ============================================================
+     ALVA COLLECTION PAGE
+     ============================================================ */
+
+  .alva-coll {
+    padding: var(--sp-12) var(--container-pad) var(--sp-20);
+  }
+
+  @media (min-width: 1024px) {
+    .alva-coll {
+      padding: var(--sp-16) var(--container-pad) var(--sp-32);
+    }
+  }
+
+  .alva-coll__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+  }
+
+  /* ---- Header ---- */
+  .alva-coll__header {
+    padding-bottom: var(--sp-10);
+    border-bottom: 1px solid var(--sand);
+    margin-bottom: var(--sp-10);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--sp-6);
+    flex-wrap: wrap;
+  }
+
+  .alva-coll__eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--font-eyebrow);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--stone);
+    display: block;
+    margin-bottom: var(--sp-2);
+  }
+
+  .alva-coll__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-display-lg);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .alva-coll__count {
+    font-family: var(--font-body);
+    font-size: var(--font-body-sm);
+    font-weight: 300;
+    color: var(--stone);
+    white-space: nowrap;
+    padding-bottom: 6px;
+  }
+
+  /* ---- Product grid ---- */
+  .alva-coll__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-8) var(--sp-6);
+  }
+
+  @media (min-width: 768px) {
+    .alva-coll__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-10) var(--sp-8);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .alva-coll__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-10) var(--sp-8);
+    }
+  }
+
+  /* ---- Product card ---- */
+  .alva-coll__card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .alva-coll__card:hover {
+    text-decoration: none;
+  }
+
+  .alva-coll__card-media {
+    overflow: hidden;
+    margin-bottom: var(--sp-4);
+    position: relative;
+  }
+
+  .alva-coll__card-img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    transition: opacity 200ms ease-out, transform 400ms ease-out;
+  }
+
+  .alva-coll__card:hover .alva-coll__card-img {
+    opacity: 0.92;
+  }
+
+  .alva-coll__card-img--secondary {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+  }
+
+  .alva-coll__card:hover .alva-coll__card-img--secondary {
+    opacity: 1;
+  }
+
+  /* MTO badge */
+  .alva-coll__badge {
+    position: absolute;
+    top: var(--sp-3);
+    left: var(--sp-3);
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--paper);
+    background-color: var(--ink);
+    padding: 3px 8px;
+    line-height: 1.4;
+  }
+
+  .alva-coll__card-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-1);
+  }
+
+  .alva-coll__card-vendor {
+    font-family: var(--font-body);
+    font-size: var(--font-eyebrow);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+
+  .alva-coll__card-title {
+    font-family: var(--font-body);
+    font-size: var(--font-body-md);
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .alva-coll__card-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--font-body-sm);
+    font-weight: 300;
+    color: var(--stone);
+    line-height: 1.4;
+  }
+
+  .alva-coll__card-price {
+    font-family: var(--font-body);
+    font-size: var(--font-body-md);
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-top: var(--sp-1);
+  }
+
+  /* ---- Empty state ---- */
+  .alva-coll__empty {
+    text-align: center;
+    padding: var(--sp-32) 0;
+  }
+
+  .alva-coll__empty p {
+    font-family: var(--font-body);
+    font-size: var(--font-body-lg);
+    font-weight: 300;
+    color: var(--stone);
+    margin-bottom: var(--sp-8);
+  }
+
+  /* ---- Pagination ---- */
+  .alva-coll__pagination {
+    margin-top: var(--sp-16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sp-2);
+  }
+
+  .alva-coll__pagination a,
+  .alva-coll__pagination span {
+    font-family: var(--font-body);
+    font-size: var(--font-ui-md);
+    font-weight: 400;
+    color: var(--charcoal);
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    transition: border-color 150ms ease-out, color 150ms ease-out;
+  }
+
+  .alva-coll__pagination a:hover {
+    border-color: var(--sand);
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .alva-coll__pagination .current {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+</style>
+
+<div class="alva-coll">
+  <div class="alva-coll__inner">
+
+    <!-- Header -->
+    <div class="alva-coll__header">
+      <div>
+        <span class="alva-coll__eyebrow">Collection</span>
+        <h1 class="alva-coll__title">{{ collection.title }}</h1>
+      </div>
+      <span class="alva-coll__count">
+        {{ collection.products_count }}
+        {%- if collection.products_count == 1 -%} piece{%- else -%} pieces{%- endif -%}
+      </span>
+    </div>
+
+    {%- if collection.description != blank -%}
+      <p style="font-family:var(--font-body);font-size:var(--font-body-lg);font-weight:300;color:var(--charcoal);line-height:1.65;max-width:640px;margin-bottom:var(--sp-10);">
+        {{ collection.description }}
+      </p>
+    {%- endif -%}
+
+    <!-- Product grid -->
+    {%- if collection.products.size > 0 -%}
+      <div class="alva-coll__grid">
+        {%- for product in collection.products -%}
+          {%- assign first_variant = product.first_available_variant -%}
+          {%- assign is_mto = true -%}
+          {%- for variant in product.variants -%}
+            {%- if variant.available and variant.inventory_management == 'shopify' and variant.inventory_quantity > 0 -%}
+              {%- assign is_mto = false -%}
+            {%- endif -%}
+          {%- endfor -%}
+
+          <a href="{{ product.url }}" class="alva-coll__card">
+            <div class="alva-coll__card-media">
+              {%- if product.featured_image -%}
+                <img
+                  class="alva-coll__card-img"
+                  src="{{ product.featured_image | image_url: width: 800 }}"
+                  srcset="
+                    {{ product.featured_image | image_url: width: 480 }} 480w,
+                    {{ product.featured_image | image_url: width: 800 }} 800w
+                  "
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 33vw, 50vw"
+                  alt="{{ product.featured_image.alt | escape | default: product.title }}"
+                  loading="lazy"
+                  width="{{ product.featured_image.width }}"
+                  height="{{ product.featured_image.height }}"
+                >
+                {%- if product.images.size > 1 -%}
+                  <img
+                    class="alva-coll__card-img alva-coll__card-img--secondary"
+                    src="{{ product.images[1] | image_url: width: 800 }}"
+                    alt="{{ product.images[1].alt | escape | default: product.title }}"
+                    loading="lazy"
+                    aria-hidden="true"
+                  >
+                {%- endif -%}
+              {%- else -%}
+                <div class="alva-coll__card-img" style="background-color:var(--cream);aspect-ratio:4/5;"></div>
+              {%- endif -%}
+
+              {%- if is_mto -%}
+                <span class="alva-coll__badge">Made to order</span>
+              {%- endif -%}
+            </div>
+
+            <div class="alva-coll__card-info">
+              <span class="alva-coll__card-vendor">{{ product.vendor }}</span>
+              <span class="alva-coll__card-title">{{ product.title }}</span>
+              {%- if product.metafields.descriptors.subtitle.value != blank -%}
+                <span class="alva-coll__card-subtitle">{{ product.metafields.descriptors.subtitle.value }}</span>
+              {%- endif -%}
+              <span class="alva-coll__card-price">
+                {%- if product.price_varies -%}
+                  From {{ product.price_min | money_without_trailing_zeros }}
+                {%- else -%}
+                  {{ product.price | money_without_trailing_zeros }}
+                {%- endif -%}
+              </span>
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+
+      {%- if paginate.pages > 1 -%}
+        <div class="alva-coll__pagination">
+          {%- if paginate.previous -%}
+            <a href="{{ paginate.previous.url }}" aria-label="Previous page">&#8592;</a>
+          {%- endif -%}
+          {%- for part in paginate.parts -%}
+            {%- if part.is_link -%}
+              <a href="{{ part.url }}">{{ part.title }}</a>
+            {%- else -%}
+              <span class="current">{{ part.title }}</span>
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if paginate.next -%}
+            <a href="{{ paginate.next.url }}" aria-label="Next page">&#8594;</a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+    {%- else -%}
+      <div class="alva-coll__empty">
+        <p>No products in this collection yet.</p>
+        <a href="/products/the-unstructured-blazer" class="alva-btn alva-btn--secondary">See the blazer</a>
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 6,
+      "max": 48,
+      "step": 6,
+      "label": "Products per page",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "ALVA Collection"
+    }
+  ]
+}
+{% endschema %}

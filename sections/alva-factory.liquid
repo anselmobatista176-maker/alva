@@ -16,13 +16,14 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--sp-10);
-    align-items: center;
+    align-items: stretch;
   }
 
   @media (min-width: 1024px) {
     .alva-factory__inner {
       grid-template-columns: 1fr 1fr;
       gap: var(--sp-20);
+      min-height: 560px;
     }
   }
 
@@ -30,6 +31,7 @@
     overflow: hidden;
   }
 
+  /* Mobile: landscape keeps section compact */
   .alva-factory__image {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -37,9 +39,16 @@
     display: block;
   }
 
+  /* Desktop: fill column height driven by text */
   @media (min-width: 1024px) {
+    .alva-factory__image-col {
+      min-height: 560px;
+    }
+
     .alva-factory__image {
-      aspect-ratio: 4 / 5;
+      aspect-ratio: unset;
+      height: 100%;
+      min-height: 560px;
     }
   }
 
